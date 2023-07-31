@@ -166,8 +166,27 @@ class ChaseTheAce:
         # randomly handout cards from a list
 
 # start game
-Game = ChaseTheAce(lives=3,deflives=3)
+#Game = ChaseTheAce(lives=3,deflives=3)
 
 
+# test suite
+# test 1 - setup players
+# test 2 - setup cards
+# test 3 - handout cards
+# test 4 - reveal cards
+# test 5 - choose
+# test 6 - swap
+# test 7 - stick
+# test 8 - assess who's dying
+# test 9 - remove player
+# test 10 - end game
+# test 11 - leaderboard
+
+# test 1 - setup players
+DebugGame = ChaseTheAce(lives=3,deflives=3,players_count=2)
+DebugGame.debugging = True
+DebugGame.setupPlayers()
+DebugGame.setupcards()
+DebugGame.handoutcards()
 
 
