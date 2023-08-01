@@ -1,57 +1,67 @@
-ChaseTheAce Game Documentation
-Welcome to the documentation for ChaseTheAce, a fun and interactive terminal-based card game. In ChaseTheAce, players are dealt a card from a standard 52-card deck and have the option to stick with their card or swap it with the deck or another player. The objective of the game is to avoid ending up with the lowest card, where Ace is the lowest and King is the highest.
+# ChaseTheAce - Terminal-Based Card Game
 
-Installation
-Before running the game, make sure you have Python 3 installed on your system. To install the game, follow these steps:
+ChaseTheAce is a fun and interactive terminal-based card game where players are dealt a card from a standard 52-card deck. The objective of the game is to avoid ending up with the lowest card, where Ace is the lowest, and King is the highest. Each player starts with 3 lives, and the player(s) with the lowest card after each round lose a life.
 
-Clone the ChaseTheAce repository from GitHub.
-bash
-Copy code
-git clone https://github.com/bsjohnson20/ChaseTheAceMP
+## How to Run the Game
+
+To play ChaseTheAce, follow these steps:
+
+1. Clone the ChaseTheAce repository from GitHub:
+
+```
+git clone https://github.com/your_username/ChaseTheAce.git
 cd ChaseTheAce
+```
 
-Copy code
-How to Play
+2. Install the required Python dependencies:
 
-Open your terminal and navigate to the ChaseTheAce directory.
+```
+pip install -r requirements.txt
+```
 
-Start the game by running the following command:
+3. Run the game using the following command:
 
-bash
-Copy code
+```
 python chase_the_ace.py
-The game will prompt you to enter the number of players who will be participating in the game. Each player will be dealt a card from the deck, and the game will begin.
+```
 
-The game will proceed in rounds, and each round consists of the following steps:
+4. The game will prompt you to enter the number of players participating in the game.
 
-a. Players take turns to decide whether to stick with their card or swap it with the deck or another player. The player with the lowest card in the previous round goes first in the current round.
+## How to Play
 
-b. If it's the last player's turn or the dealer's turn, the player will not see their card until the end of the round.
+1. At the start of the game, each player is given a singular card from the deck.
 
-c. If the previous player decides to swap and the current player chooses to swap as well, the two players will exchange cards. However, swapping with a player who has a King is not possible, and a player with a King cannot swap their card.
+2. Players take turns in order to decide whether to stick with their card or swap it with the deck or another player. The player with the lowest card in the previous round goes first in the current round.
 
-d. After all players have made their decisions, the dealer (last player) reveals their card to everyone and decides whether to swap it or not.
+3. If it's the last player's turn or the dealer's turn, the player will not see their card until the end of the round.
 
-e. The round ends, and the players with the lowest card (Ace being the lowest and King the highest) will lose a life.
+4. Swapping is not possible with a player who has a King, and a player with a King cannot swap their card.
 
-The game continues in rounds until one or more players run out of lives. The last remaining player(s) are declared winners.
+5. After all players have made their decisions, the dealer (last player) reveals their card to everyone and decides whether to swap it or not.
 
-Players can decide to exit the game at any time by entering "exit" when prompted for their decision.
+6. The round ends, and the players with the lowest card (Ace being the lowest and King the highest) will lose a life.
 
-Game Rules
-Each player starts with 3 lives.
+7. The game continues in rounds until one or more players run out of lives. The last remaining player(s) are declared winners.
 
-Ace is the lowest card, and King is the highest.
+## Leaderboards
 
-Swapping is not possible with a player who has a King, and a player with a King cannot swap their card.
+The game keeps track of player scores and maintains a leaderboard. The scores are updated at the end of each game, and the leaderboard ranks players based on their scores (the number of rounds survived). The leaderboard data is stored in a CSV file named "scores.csv."
 
-The dealer, who goes last, will not see their card until the end of the round, and they can decide whether to swap it or not.
+## Test Facility
 
-When a player loses all their lives, they are eliminated from the game.
+You can enable the test facility to run automated test cases for the game. To do this, use the `--test` command-line argument when running the game:
 
-Sample Gameplay
-vbnet
-Copy code
+```
+python chase_the_ace.py --test
+```
+
+The test facility will execute a series of test cases to check different aspects of the game's functionality, such as setup, card distribution, player choices, leaderboard updates, and more.
+
+## Example Gameplay
+
+Here's an example of how the game works:
+
+```
 Welcome to ChaseTheAce!
 
 Enter the number of players: 4
@@ -75,31 +85,15 @@ Player 3, it's your turn. Do you want to stick (S) or swap (W)? S
 
 Player 4, it's your turn. Do you want to stick (S) or swap (W)? S
 
-Player 1, it's your turn. Do you want to stick (S) or swap (W)? S
-
-Player 2, it's your turn. Do you want to stick (S) or swap (W)? S
-
-Player 3, it's your turn. Do you want to stick (S) or swap (W)? S
-
-Player 4, it's your turn. Do you want to stick (S) or swap (W)? S
-
-Player 1, it's your turn. Do you want to stick (S) or swap (W)? S
-
-Player 2, it's your turn. Do you want to stick (S) or swap (W)? S
-
-Player 3, it's your turn. Do you want to stick (S) or swap (W)? S
-
-Player 4, it's your turn. Do you want to stick (S) or swap (W)? S
-
 Dealer (Player 1), your card is: A. Do you want to stick (S) or swap (W)? W
 Swapping your card with the deck...
 Dealer (Player 1), your new card is: J
 
 The round ends. Player 2, Player 3, and Player 4 lost a life.
 
-... (Game continues until a player loses all lives)
-
 Congratulations, Player 1! You won the game!
 
 Thank you for playing ChaseTheAce. Hope you had fun!
-Enjoy playing ChaseTheAce and have a great time with your friends!
+```
+
+Enjoy playing ChaseTheAce with your friends and see who can survive the longest in this exciting card game!
