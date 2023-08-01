@@ -13,7 +13,7 @@ git clone https://github.com/your_username/ChaseTheAce.git
 cd ChaseTheAce
 ```
 
-2. Install the required Python dependencies:
+2. Install the required Python dependencies: - there aren't any
 
 ```
 pip install -r requirements.txt
