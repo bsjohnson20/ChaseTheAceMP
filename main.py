@@ -2,6 +2,7 @@ import csv
 import logging
 import os
 import random as rd
+import sys
 
 
 # The game works by having the lowest number in a deck meaning you lose!
@@ -215,6 +216,7 @@ class ChaseTheAce:
             # loop
             self.update_scores()
 
+
 class Player:
     def __init__(self, lives, name="unknown", selfplaying=False):
         self.lives = lives
@@ -238,7 +240,9 @@ class Player:
 
 
 # start game
-Game = ChaseTheAce(lives=3,deflives=3)
+Game = ChaseTheAce(lives=3, deflives=3)
+
+
 # Game.setupPlayers()
 # Game.GameLoop()
 
@@ -257,7 +261,24 @@ Game = ChaseTheAce(lives=3,deflives=3)
 # test 11 - leaderboard
 
 # test 1 - setup players
-for i in range(500):
-    print(f"Test 1 - setup players - {i + 1}")
-    Game = ChaseTheAce(lives=3, deflives=3, players_count=10, selfplaying=True, debugging=True)
-# DebugGame = ChaseTheAce(lives=3,deflives=3,players_count=2,selfplaying=True,debugging=True)
+def test():
+    for i in range(500):
+        print(f"Test 1 - setup players - {i + 1}")
+        Game = ChaseTheAce(lives=3, deflives=3, players_count=10, selfplaying=True, debugging=True)
+    # DebugGame = ChaseTheAce(lives=3,deflives=3,players_count=2,selfplaying=True,debugging=True)
+
+
+if __name__ == "__main__":
+    # check sys args for --test
+    if "--test" in sys.argv:
+        test()
+    else:
+        # check for player count with --players
+        if "--players" in sys.argv:
+            try:
+                playercount = int(sys.argv[sys.argv.index("--players") + 1])
+            except ValueError:
+                playercount = 4
+        else:
+            playercount = 4
+        Game = Game = ChaseTheAce(lives=3, deflives=3, players_count=playercount)
