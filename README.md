@@ -96,4 +96,3 @@ Congratulations, Player 1! You won the game!
 Thank you for playing ChaseTheAce. Hope you had fun!
 ```
 
-Enjoy playing ChaseTheAce with your friends and see who can survive the longest in this exciting card game!
